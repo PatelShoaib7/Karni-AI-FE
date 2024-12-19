@@ -1,0 +1,65 @@
+
+/* Container for search bar and results */
+.search-container {
+    position: relative;
+    width: 300px;
+    margin: 20px auto;
+}
+
+/* Styling the input box */
+.search-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.search-input:focus {
+    border-color: #007bff;
+    box-shadow: 0px 4px 6px rgba(0, 123, 255, 0.2);
+    transition: 0.3s;
+}
+
+/* Search results container */
+.search-results {
+    position: absolute;
+    top: 45px;
+    left: 0;
+    width: 100%;
+    max-height: 250px;
+    overflow-y: auto;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding: 10px;
+    display: none; /* Default to hidden */
+}
+
+/* Show results when data is available */
+.search-results.visible {
+    display: block;
+}
+
+/* Individual search result items */
+.search-result-item {
+    padding: 10px;
+    font-size: 14px;
+    color: #333;
+    border-bottom: 1px solid #f0f0f0;
+    cursor: pointer;
+}
+
+.search-result-item:last-child {
+    border-bottom: none;
+}
+
+.search-result-item:hover {
+    background-color: #f8f9fa;
+    color: #007bff;
+    transition: background-color 0.3s;
+}
