@@ -16,7 +16,6 @@ export const getAllItemsList = (itemId) => async (dispatch) => {
   }
 };
 
-
 export const getSearchedItemsList = (searchTerm) => async (dispatch) => {
     dispatch({ type: SEARCH_ITEM_LIST_LOADING });
    //console.log("--loading---")
