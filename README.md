@@ -53,4 +53,4 @@ Welcome to the **Advanced React Application**! This project leverages cutting-ed
 
 ### 1. Clone the Repository:
 ```bash
-git clone https://github.com/yourusername/advanced-react-app.git
+git clone https://github.com/PatelShoaib7/Karni-AI-BE
