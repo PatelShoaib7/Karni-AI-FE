@@ -3,13 +3,12 @@ import { ADD_ITEM_TO_CART_ERROR, ADD_ITEM_TO_CART_LOADING, ADD_ITEM_TO_CART_SUCE
 
 const BASE_URL ="https://karni-ai-be.onrender.com"
 
-export const getAllItemsList = () => async (dispatch) => {
+export const getAllItemsList = (itemId) => async (dispatch) => {
   dispatch({ type: GET_ITEM_LIST_LOADING });
  // console.log("--loading---")
   try {
     const response = await axios.get(`${BASE_URL}/user/get/item/list`);
     //console.log("Response:", response.data);
-
     dispatch({ type: GET_ITEM_LIST_SUCESSS, payload: response.data });
   } catch (error) {
     console.log("Error fetching items:", error);
@@ -33,13 +32,17 @@ export const getSearchedItemsList = (searchTerm) => async (dispatch) => {
     }
   };
   
-export const addToCart = (searchTerm) => async (dispatch) => {
+export const addToCart_APIFunc = (itemId) => async (dispatch) => {
     dispatch({ type: ADD_ITEM_TO_CART_LOADING });
    //console.log("--loading---")
     try {
-      const response = await axios.get(`${BASE_URL}/user/get/item/list?searchBy=${searchBy}`);
-      console.log("Response:", response.data);
-      dispatch({ type: ADD_ITEM_TO_CART_SUCESSS, payload: response.data });
+      const response = await axios.post(`${BASE_URL}/user/add/item/cart` ,{
+          userId :"654360764824ec3abb5229b9",
+          itemId : itemId
+
+      });
+     // console.log("Response:", response.data);
+      dispatch({ type: ADD_ITEM_TO_CART_SUCESSS, payload: response.data , });
     
     } catch (error) {
       console.log("Error fetching items:", error);
